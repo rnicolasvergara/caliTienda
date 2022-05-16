@@ -182,15 +182,7 @@ div a img{
 
 /*------------------------------Productos-----------------------------------*/
 .productos{
-    margin-bottom: 100px;
-}
-
-.productos h2{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 50px;
-    border-bottom-style: solid;
+    margin-bottom: 100px;    
 }
 
 .productos > div{
@@ -224,18 +216,20 @@ div a img{
     background-color: none;
     font-size: 40px;
     padding: 70px 0 70px 0;
-    margin-bottom: 300px;
+    background-color:#91725544;
+    margin: 20px;
 }
 
 /*-----------------------------Nosotros---------------------------------------*/
 
 .contenedorNosotros{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background-color: none;
     font-size: 40px;
-    padding: 70px 70px 70px 70px;
-    margin-bottom: 250px;
+    padding: 70px;
+    background-color:#91725544;
+    margin: 20px;
 }
 
 /*-----------------------------Contacto---------------------------------------*/
@@ -245,6 +239,8 @@ div a img{
     justify-content: flex-start;
     background-color: none;
     font-size: 30px;
-    padding: 30px 30px 30px 30px;
+    padding: 30px;
+    background-color:#91725544;
+    margin: 20px;
 }
 

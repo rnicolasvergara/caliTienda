@@ -14,7 +14,7 @@
     grid-template-areas:
     "header header"
     "nav nav"
-    "main main"
+    "main main"     
     "footer footer";
 }
 
@@ -190,6 +190,7 @@ div a img{
     margin-bottom: 30px;
     text-align: center;
     font-size: 50px;
+    border-bottom-style: solid;
 }
 
 .productos > div{

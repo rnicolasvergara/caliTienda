@@ -92,11 +92,9 @@ nav ul li a:hover{
 
 .hero{
     width: 100%;
-    height:80vh;
-    background: url("../img/Cali_Home.png");
+    height: 90vh;
     background-position: center;
     background-size: cover;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -195,6 +193,10 @@ footer div div a img:hover{
     padding: 70px 0 70px 0;
     background-color:#91725544;
     margin: 20px;
+}
+
+.card-body{
+    background-color:#91725544;
 }
 
 /*-----------------------------Nosotros---------------------------------------*/

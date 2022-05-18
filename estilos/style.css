@@ -67,6 +67,11 @@ nav{
 nav ul li{
     display: inline-block;
     margin-left: 30px;
+    transition: 1s;
+}
+
+nav ul li:hover{
+    transform:  scale(1.1);
 }
 
 nav ul li a{
@@ -103,39 +108,6 @@ nav ul li a:hover{
     color: #917255c9;
     font-weight: normal;
 }
-
-/*-------------------------------MediaQuerys-----------------------------------*/
-
-    @media screen and (max-width:709px){
-        .hero{
-            height: 40vh;
-        }
-        .hero h1{
-            font-size: 50px;
-        }
-        .header{
-            flex-direction: column;
-            justify-content: center;
-        }
-        .footer>div{
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-    }
-    @media screen and (max-width:1200px){
-        .hero{
-            height: 60vh;
-        }
-
-    }
-
-    @media screen and (max-width:1249px){
-        .productos>div{
-            flex-direction: column;
-        }
-    }
-
 
 /*-------------------------------Body----------------------------------------*/
 
@@ -174,10 +146,15 @@ footer p{
     text-align: center;
 }
 
-div a img{
+footer div div a img{
     width: 50px;
     height: 50px;
     padding: 2px;
+    transition: 1s;
+}
+
+footer div div a img:hover{
+    transform: scale(1.1);
 }
 
 /*------------------------------Productos-----------------------------------*/
@@ -244,3 +221,29 @@ div a img{
     margin: 20px;
 }
 
+/*-------------------------------MediaQuerys-----------------------------------*/
+
+@media screen and (max-width:709px){
+    .hero{
+        height: 40vh;
+    }
+    .hero h1{
+        font-size: 50px;
+    }
+    .header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer>div{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .hero{
+        height: 60vh;
+    }
+
+}

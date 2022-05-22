@@ -24,36 +24,50 @@
       </ul> 
 </header>
 <main>
-      <nav>
-        <ul>
-          <li>
-            <a href="../index.html">Inicio</a>
-          </li>
-          <li>
-            <a href="productos.html">Productos</a>
-          </li>
-          <li>
-            <a href="mayorista.html">Mayorista</a>
-          </li>
-          <li>
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-          <li>
-            <a href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </nav>
+  <div class="navbar">
+    <nav class="navbar navbar-expand-lg bg-light ">
+      <div class="container-fluid">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../secciones/productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../secciones/mayorista.html">Mayorista</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../secciones/nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../secciones/contacto.html">Contacto</a>
+            </li>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class=" btn btn-dark btn-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
 
     <section class="contenedorMayorista">
       <div class="card">
-        <img src="../img/bosque.png" class="card-img-top" alt="...">
+        <img src="../img/bosque.png" class="card-img-top" alt="Imagen de un bosque">
         <div class="card-body">
           <p class="card-text">Muchas gracias por interesarte en nuestros productos!</p>
-          <p>Muchas gracias por interesarte en nuestros productos!</p>
         <p>Podes solicitar el catalogo con precios, modelos y carta de aromas a
           calitienda@gmail.com</p>
         <p>Te esperamos!</p>
-          <a href="#" class="btn btn-outline-dark">Contactanos</a>
+          <a href="../secciones/contacto.html" class="btn btn-outline-dark">Contactanos</a>
         </div>
       </div>
     </section>

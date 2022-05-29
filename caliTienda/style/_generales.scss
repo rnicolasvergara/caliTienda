@@ -1,0 +1,23 @@
+.header{
+    background-image: linear-gradient(#e3e0d5,white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    grid-area: header;
+    ul{
+        display: flex;
+        list-style: none;
+        li{
+            border-left: 1px solid #917255;
+            border-right: 1px solid #917255;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-left: 20px;
+             a{
+                color: #917255;
+                text-decoration: none;
+            }
+        }
+    }
+}

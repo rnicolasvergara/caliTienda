@@ -31,10 +31,9 @@
     height: 50px;
     padding: 2px;
     transition: 1s;
-}
-
-.footer div div a img:hover{
-    transform: scale(1.1);
+    &:hover{
+        transform: scale(1.1);
+    }
 }
 
 .footer div div h3{

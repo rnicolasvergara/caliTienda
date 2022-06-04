@@ -1,6 +1,8 @@
 @import "header";
 @import "mayorista";
 @import "main";
+@import "footer";
+@import "navbar";
 
 *{
     padding: 0;
@@ -21,26 +23,6 @@
     "nav nav"
     "main main"     
     "footer footer";
-}
-
-/*--------------------------------Header-------------------------------------*/
-
-.navbar{
-    display: flex;
-    justify-content: center;
-}
-
-.navbar ul li a{
-        color: #917255; 
-    }
-
-.nav ul li:hover{
-    transform:  scale(1.1);
-}
-
-.nav ul li a:hover{
-    transition: 1s;
-    font-size: large;
 }
 
 /*-------------------------------Body----------------------------------------*/
@@ -87,52 +69,6 @@ main section div img{
     background-color:#91725544;
     margin: 20px;
     border-radius: 20px;
-}
-
-
-/*-------------------------------------Footer-----------------------------------------*/
-.footer{
-    grid-area: footer;
-}
-
-.footer>div{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        font-size: 20px;
-        padding: 20px;
-        grid-area: footer;
-}
-
-.footer div div div{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style: none;
-}
-
-.footer ul{
-    list-style: none;
-    font-size: 15px;
-}
-
-.footer p{
-    text-align: center;
-}
-
-.footer div div a img{
-    width: 50px;
-    height: 50px;
-    padding: 2px;
-    transition: 1s;
-}
-
-.img:hover{
-    transform: scale(1.1);
-}
-
-.footer div div h3{
-    font-size: 15px;
 }
 
 /*-------------------------------MediaQuerys-----------------------------------*/

@@ -1,0 +1,15 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    ul li a{
+        color: #917255; 
+        &:hover{
+            transition: 1s;
+            font-size: large;
+        }
+    }
+}
+
+.navbar ul li:hover{
+    transform:  scale(1.1);
+}

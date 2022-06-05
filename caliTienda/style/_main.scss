@@ -1,3 +1,5 @@
+@import"variables";
+
 .main{
     grid-area: main;
 }
@@ -14,8 +16,23 @@
     align-items: center;
     h1{
         font-size: 70px;
-        color:#917255;
+        color:$color-textos;
         font-weight: normal;
         text-align: center;
     }
+}
+
+.calendario{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 60px;
+}
+
+.main h2{
+    display: flex;
+    justify-content: center;
+   padding: 20px;
+    background-color: $color-background;
 }

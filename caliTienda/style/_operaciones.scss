@@ -1,0 +1,22 @@
+/*-------------------Maps----------------------*/
+
+
+
+/*-------------------Mixin---------------------*/
+
+@mixin flexible( $dis , $direction , $just , $align){
+    display: $dis;
+    flex-direction: $direction;
+    justify-content: $just;
+    align-items: $align;
+}
+
+.productos{
+    @include flexible( flex , row , space-between , center );
+}
+
+.contenedorContacto{
+    @include flexible(flex, column , none , none );
+}
+
+/*-----------------Extend-------------------------*/

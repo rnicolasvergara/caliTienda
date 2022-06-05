@@ -54,6 +54,32 @@ ul li {
   list-style-type: none;
 }
 
+.contenedorMayorista {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: none;
+  font-size: 25px;
+  padding: 20px 0 70px 0;
+  background-color: #91725544;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.card-body {
+  background-color: #91725544;
+}
+
+section div img {
+  background-color: #91725544;
+}
+
+.card-img-top {
+  height: 40%;
+}
+
 .main {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -89,11 +115,39 @@ ul li {
   text-align: center;
 }
 
+.calendario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 60px;
+}
+
+.main h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  background-color: #91725544;
+}
+
 .footer {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: footer;
+  background-color: #91725544;
 }
 
 .footer > div {
@@ -136,7 +190,6 @@ ul li {
 }
 
 .footer div div a img {
-  width: 50px;
   height: 50px;
   padding: 2px;
   -webkit-transition: 1s;
@@ -159,6 +212,10 @@ ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: navbar;
 }
 
 .navbar ul li a {
@@ -176,6 +233,41 @@ ul li {
           transform: scale(1.1);
 }
 
+/*-------------------Maps----------------------*/
+/*-------------------Mixin---------------------*/
+.productos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedorContacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+}
+
+/*-----------------Extend-------------------------*/
 * {
   padding: 0;
   margin: 0;
@@ -193,7 +285,7 @@ ul li {
       grid-template-columns: 1fr;
   -ms-grid-rows: 0.5fr 0.5fr auto 0.5fr;
       grid-template-rows: 0.5fr 0.5fr auto 0.5fr;
-      grid-template-areas: "header header" "nav nav" "main main"      "footer footer";
+      grid-template-areas: "header header" "navbar navbar" "main main"      "footer footer";
 }
 
 /*-------------------------------Body----------------------------------------*/
@@ -204,16 +296,6 @@ body {
 
 /*------------------------------Productos-----------------------------------*/
 .productos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 20px;
@@ -239,24 +321,17 @@ main section div img {
 
 /*-----------------------------Contacto---------------------------------------*/
 .contenedorContacto {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   font-size: 20px;
   padding: 30px;
-  background-color: #91725544;
   margin: 20px;
   border-radius: 20px;
+  background-color: #91725544;
 }
 
 /*-------------------------------MediaQuerys-----------------------------------*/
-@media screen and (max-width: 709px) {
-  .hero {
-    height: 40vh;
+@media screen and (max-width: 768px) {
+  .main .hero {
+    height: 20vh;
   }
   .hero h1 {
     font-size: 50px;

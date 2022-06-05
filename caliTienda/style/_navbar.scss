@@ -1,8 +1,11 @@
+@import"variables";
+
 .navbar{
     display: flex;
     justify-content: center;
+    grid-area: navbar;
     ul li a{
-        color: #917255; 
+        color: $color-textos; 
         &:hover{
             transition: 1s;
             font-size: large;

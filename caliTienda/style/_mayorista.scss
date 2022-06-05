@@ -1,0 +1,24 @@
+@import"variables";
+
+.contenedorMayorista{
+    display: flex;
+    justify-content: space-around;
+    background-color: none;
+    font-size: 25px;
+    padding: 20px 0 70px 0;
+    background-color:$color-background;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.card-body{
+    background-color:$color-background;
+}
+
+section div img{
+    background-color:$color-background;
+}
+
+.card-img-top{
+    height: 40%;
+}

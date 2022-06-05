@@ -1,3 +1,5 @@
+@import"variables";
+
 .header{
     background-image: linear-gradient(#e3e0d5,white);
     display: flex;
@@ -9,13 +11,13 @@
         display: flex;
         list-style: none;
         li{
-            border-left: 1px solid #917255;
-            border-right: 1px solid #917255;
+            border-left: 1px solid $color-textos;
+            border-right: 1px solid $color-textos;
             padding-left: 5px;
             padding-right: 5px;
             margin-left: 20px;
              a{
-                color: #917255;
+                color: $color-textos;
                 text-decoration: none;
                 &:hover{
                     font-size: small;

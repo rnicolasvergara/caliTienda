@@ -234,6 +234,10 @@ section div img {
 }
 
 /*-------------------Maps----------------------*/
+.contenedor--Nosotros {
+  font-size: 30px;
+}
+
 /*-------------------Mixin---------------------*/
 .productos {
   display: -webkit-box;
@@ -268,6 +272,12 @@ section div img {
 }
 
 /*-----------------Extend-------------------------*/
+.nos, .contenedor--Nosotros {
+  margin: 20px;
+  border-radius: 20px;
+  padding: 70px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -308,15 +318,11 @@ main section div img {
 }
 
 /*-----------------------------Nosotros---------------------------------------*/
-.contenedorNosotros {
+.contenedor--Nosotros {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 30px;
-  padding: 70px;
   background-color: #91725544;
-  margin: 20px;
-  border-radius: 20px;
 }
 
 /*-----------------------------Contacto---------------------------------------*/

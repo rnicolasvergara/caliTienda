@@ -51,13 +51,10 @@ main section div img{
 
 /*-----------------------------Nosotros---------------------------------------*/
 
-.contenedorNosotros{
+.contenedor--Nosotros{
     display: flex;
-    font-size: 30px;
-    padding: 70px;
     background-color: $color-background;
-    margin: 20px;
-    border-radius: 20px;
+    @extend.nos;
 }
 
 /*-----------------------------Contacto---------------------------------------*/

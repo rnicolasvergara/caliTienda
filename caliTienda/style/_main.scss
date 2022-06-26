@@ -28,11 +28,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: 60px;
+    .card-body{
+        background-color: $color-background;
+    }
 }
 
 .main h2{
     display: flex;
     justify-content: center;
-   padding: 20px;
+    padding: 20px;
     background-color: $color-background;
 }
+

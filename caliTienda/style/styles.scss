@@ -6,8 +6,6 @@
 @import "operaciones";
 @import "variables";
 
-
-
 *{
     padding: 0;
     margin: 0;
@@ -42,11 +40,19 @@ body{
     flex-wrap: wrap;
     margin: 20px;
     text-align: center;
+    margin-bottom: 100px;
+    .card{
+        background-color: $color-background;
+    }
+}
+
+main section div p{
+    margin: 1px;
 }
 
 main section div img{
     width: 250px;
-    height: 450px;
+    height: 400px;
 }
 
 /*-----------------------------Nosotros---------------------------------------*/
@@ -55,18 +61,56 @@ main section div img{
     display: flex;
     background-color: $color-background;
     @extend.nos;
+    margin-bottom: 250px;
+}
+
+.about-section{
+    background: url(../img/flora.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: $color-background;
+    padding: 150px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 20px;
+    color: $color-textos;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
 }
 
 /*-----------------------------Contacto---------------------------------------*/
 
-.contenedorContacto{
+
+.contenedorContacto{    
     font-size: 20px;
     padding: 30px;
     margin: 20px;
     border-radius: 20px;
     background-color: $color-background;
+    margin-bottom: 60px;
 }
-
 
 /*-------------------------------MediaQuerys-----------------------------------*/
 
@@ -75,11 +119,14 @@ main section div img{
         height: 20vh;
     }
     .hero h1{
-        font-size: 50px;
+        font-size: 40px;
     }
     .header{
         flex-direction: column;
         justify-content: center;
+        li{
+            margin: 10px;
+        }
     }
     .footer>div{
         flex-direction: column;
@@ -91,6 +138,66 @@ main section div img{
 @media screen and (max-width:1200px){
     .hero{
         height: 60vh;
+    .inner-container{
+            padding: 80px;
+        }
     }
+    .navbar{
+        display: flex;
+        justify-content: flex-start;
+        grid-area: navbar;
+    }
+}
 
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+    .about-sectionMayorista{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-containerMayorista{
+        width: 100%;
+    }
+    .calendario{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-sectionMayorista{
+        padding: 0;
+    }
+    .about-section{
+        padding: 0;
+    }
+    .main h2{
+        font-size: 20px;
+    }
+    .main .hero{
+        height: 30vh;
+        h1{
+            font-size: 30px;
+        }
+    }
+    .header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer>div{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+   .productos{
+       justify-content: center;
+       .card{
+           margin: 30px;
+       }
+   }
 }

@@ -4,13 +4,18 @@
     display: flex;
     justify-content: center;
     grid-area: navbar;
-    ul li a{
+    ul {
+        li {
+            a{
         color: $color-textos; 
         &:hover{
             transition: 1s;
             font-size: large;
+            }
         }
     }
+}
+
 }
 
 .navbar ul li:hover{

@@ -17,6 +17,13 @@
   grid-area: header;
 }
 
+.header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90px;
+}
+
 .header ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,11 +32,10 @@
 }
 
 .header ul li {
-  border-left: 1px solid #917255;
-  border-right: 1px solid #917255;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 8px;
   margin-left: 20px;
+  background-color: #91725544;
+  border-radius: 7px;
 }
 
 .header ul li a {
@@ -43,41 +49,52 @@
   transition: 1s;
 }
 
-img.logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 90px;
-}
-
 ul li {
   list-style-type: none;
 }
 
-.contenedorMayorista {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: none;
-  font-size: 25px;
-  padding: 20px 0 70px 0;
-  background-color: #91725544;
-  margin: 10px;
-  border-radius: 20px;
+.about-sectionMayorista {
+  background: url(../img/arboles_bosque.jpg) no-repeat left;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
 }
 
-.card-body {
+.inner-containerMayorista {
+  width: 55%;
+  float: right;
   background-color: #91725544;
+  padding: 150px;
 }
 
-section div img {
+.inner-containerMayorista a {
+  text-decoration: none;
   background-color: #91725544;
+  padding: 10px;
+  border-radius: 10px;
+  color: #917255;
+  width: 50%;
 }
 
-.card-img-top {
-  height: 40%;
+.inner-containerMayorista a:hover {
+  font-size: large;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.inner-containerMayorista h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 20px;
+  color: #917255;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
 }
 
 .main {
@@ -129,6 +146,10 @@ section div img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 60px;
+}
+
+.calendario .card-body {
+  background-color: #91725544;
 }
 
 .main h2 {
@@ -310,11 +331,20 @@ body {
       flex-wrap: wrap;
   margin: 20px;
   text-align: center;
+  margin-bottom: 100px;
+}
+
+.productos .card {
+  background-color: #91725544;
+}
+
+main section div p {
+  margin: 1px;
 }
 
 main section div img {
   width: 250px;
-  height: 450px;
+  height: 400px;
 }
 
 /*-----------------------------Nosotros---------------------------------------*/
@@ -323,6 +353,47 @@ main section div img {
   display: -ms-flexbox;
   display: flex;
   background-color: #91725544;
+  margin-bottom: 250px;
+}
+
+.about-section {
+  background: url(../img/flora.jpg) no-repeat left;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-container {
+  width: 55%;
+  float: right;
+  background-color: #91725544;
+  padding: 150px;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 20px;
+  color: #917255;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
 }
 
 /*-----------------------------Contacto---------------------------------------*/
@@ -332,6 +403,7 @@ main section div img {
   margin: 20px;
   border-radius: 20px;
   background-color: #91725544;
+  margin-bottom: 60px;
 }
 
 /*-------------------------------MediaQuerys-----------------------------------*/
@@ -340,7 +412,90 @@ main section div img {
     height: 20vh;
   }
   .hero h1 {
-    font-size: 50px;
+    font-size: 40px;
+  }
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header li {
+    margin: 10px;
+  }
+  .footer > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero .inner-container {
+    padding: 80px;
+  }
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: navbar;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .about-section {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-container {
+    width: 100%;
+  }
+  .about-sectionMayorista {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-containerMayorista {
+    width: 100%;
+  }
+  .calendario {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-sectionMayorista {
+    padding: 0;
+  }
+  .about-section {
+    padding: 0;
+  }
+  .main h2 {
+    font-size: 20px;
+  }
+  .main .hero {
+    height: 30vh;
+  }
+  .main .hero h1 {
+    font-size: 30px;
   }
   .header {
     -webkit-box-orient: vertical;
@@ -361,11 +516,13 @@ main section div img {
             justify-content: center;
     text-align: center;
   }
-}
-
-@media screen and (max-width: 1200px) {
-  .hero {
-    height: 60vh;
+  .productos {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .productos .card {
+    margin: 30px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

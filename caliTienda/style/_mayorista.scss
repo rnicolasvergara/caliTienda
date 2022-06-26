@@ -1,24 +1,45 @@
 @import"variables";
 
-.contenedorMayorista{
-    display: flex;
-    justify-content: space-around;
-    background-color: none;
-    font-size: 25px;
-    padding: 20px 0 70px 0;
-    background-color:$color-background;
-    margin: 10px;
-    border-radius: 20px;
+
+
+.about-sectionMayorista{
+    background: url(../img/arboles_bosque.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
 }
 
-.card-body{
-    background-color:$color-background;
+.inner-containerMayorista{
+    width: 55%;
+    float: right;
+    background-color: $color-background;
+    padding: 150px;
+    a{
+        text-decoration: none;
+        background-color: $color-background;
+        padding: 10px;
+        border-radius: 10px;
+        color: $color-textos;
+        width: 50%;
+        &:hover{
+            font-size: large;
+            transition: 1s;
+        }
+    }
 }
 
-section div img{
-    background-color:$color-background;
+.inner-containerMayorista h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
 }
 
-.card-img-top{
-    height: 40%;
+.text{
+    font-size: 20px;
+    color: $color-textos;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
 }
+

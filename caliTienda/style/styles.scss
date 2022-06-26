@@ -113,10 +113,18 @@ main section div img{
 }
 
 /*-------------------------------MediaQuerys-----------------------------------*/
+@media screen and (max-width:615px){
+    .productos{
+        justify-content: center;
+        .card{
+            margin: 30px;
+        }
+    }
+}
 
 @media screen and (max-width:768px){
     .main .hero{
-        height: 20vh;
+        height: 30vh;
     }
     .hero h1{
         font-size: 40px;

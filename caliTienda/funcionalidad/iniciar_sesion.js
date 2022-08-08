@@ -19,6 +19,12 @@ function respuestaClick(){
         console.log(usuarios)
 }
 
+const guardarLocal = (usuario, nombre, apellido, mail) => { localStorage.setItem(usuario, nombre, apellido, mail) };
+
+for (const usuario of usuarios) {
+    guardarLocal(usuario.id, JSON.stringify(usuario));
+}
+
 const crear = document.getElementById("CrearCuenta")
 crear.addEventListener ("click", respuestaClick2)
 function respuestaClick2(){
@@ -34,23 +40,4 @@ const pregunta2 = prompt("¿Deseas crear un usuario?");
         }
 
         usuarios.push({usuario, nombre, apellido, mail})
-        console.log(usuarios)
-}
-
-
-const productos = [{ id: 1, producto: "Arroz", precio: 125 },
- { id: 2, producto: "Fideo", precio: 70 },
- { id: 3, producto: "Pan" , precio: 50},
- { id: 4, producto: "Flan" , precio: 100}];
-const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
-
-for (const producto of productos) {
-    guardarLocal(producto.id, JSON.stringify(producto));
-}
-
-
-
-
-
-
-
+        console.log(usuarios)}

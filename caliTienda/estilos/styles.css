@@ -53,6 +53,10 @@ ul li {
   list-style-type: none;
 }
 
+.carrito #imagenCarrito {
+  width: 5%;
+}
+
 .about-sectionMayorista {
   background: url(../img/arboles_bosque.jpg) no-repeat left;
   background-size: 55%;
@@ -230,9 +234,9 @@ ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -252,6 +256,24 @@ ul li {
 .navbar ul li:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.carrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carrito .carrito-text {
+  padding-left: 10px;
+}
+
+.carrito .carrito-text #imagenCarrito {
+  width: 7%;
+}
+
+#boton-vaciar {
+  margin-left: 10px;
 }
 
 /*-------------------Maps----------------------*/
@@ -535,5 +557,10 @@ main section div img {
   .productos .card {
     margin: 30px;
   }
+}
+
+/*-------------------------------------------form-iniciarSesion------------------------------------*/
+.botones-crearUsuario {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -2,7 +2,7 @@
 
 .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     grid-area: navbar;
     ul {
         li {
@@ -20,4 +20,18 @@
 
 .navbar ul li:hover{
     transform:  scale(1.1);
+}
+
+.carrito{
+    display: flex;
+    .carrito-text{
+        padding-left: 10px;
+        #imagenCarrito{
+        width: 7%;    
+        }
+    }
+}
+
+#boton-vaciar{
+margin-left: 10px;
 }

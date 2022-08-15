@@ -4,6 +4,42 @@ const name = document.getElementById("nombre")
 const lastName = document.getElementById("apellido")
 const email = document.getElementById("mail")
 const registerUser = document.getElementById("CrearCuenta")
+const formlogin = document.getElementById("formlogin")
+const login = document.getElementById("login")
+const recuperarContraseña = document.getElementById("recuperarContraseña")
+
+let users = JSON.parse(localStorage.getItem("users")) || [{
+    username: "rnico",
+    password: "123456",
+    email: "rnico@gmail.com"
+}]
+
+console.log(users)
+
+function logIn() {
+    let usuarioIngresado = users.find(userU => userU.username === user.value)
+
+    if (usuarioIngresado == undefined) {
+        Swal.fire(
+            'Usuario no encontrado',
+            'por favor registrese',
+            'error'
+        )
+    } else if (usuarioIngresado.password !== password.value) {
+        Swal.fire(
+            'Contraseña incorrecta',
+            '',
+            'error'
+        )
+    } else {
+        window.location.href = "test.html"
+    }
+}
+
+login.onclick = (e) => {
+    e.preventDefault()
+    logIn()
+}
 
 class NewUser {
     constructor(username, password, name, lastName, email) {

@@ -1,43 +1,52 @@
-let usuarios = []
+const user = document.getElementById("usuario")
+const password = document.getElementById("clave")
+const name = document.getElementById("nombre")
+const lastName = document.getElementById("apellido")
+const email = document.getElementById("mail")
+const registerUser = document.getElementById("CrearCuenta")
 
-const iniciar = document.getElementById("IniciarSesion")
-iniciar.addEventListener ("click", respuestaClick)
-function respuestaClick(){
-    prompt("Ingresa tu usuario");
-    const pregunta = prompt("Usuario Inexistente, ¿Deseas crear uno?");
-    if (pregunta == "si"){
-        let usuario = prompt("Ingresa un nombre de usuario")
-        let nombre = prompt("Ingresa tu nombre")
-        let apellido = prompt("Ingresa tu apellido")
-        let mail = prompt ("Ingresa tu mail")
-        alert("¡Creaste tu usuario exitosamente!")
-    } else if (pregunta == "no"){
-       alert("Hasta luego, te esperamos pronto")
-        }
-
-        usuarios.push({usuario, nombre, apellido, mail})
-        console.log(usuarios)
+class NewUser {
+    constructor(username, password, name, lastName, email) {
+        this.username = username,
+        this.password = password,
+        this.name = name,
+        this.lastName = lastName,
+        this.email = email
+    }
 }
 
-const guardarLocal = (usuario, nombre, apellido, mail) => { localStorage.setItem(usuario, nombre, apellido, mail) };
+const CrearUsuario = document.querySelector("#formCrearUsuario");
 
-for (const usuario of usuarios) {
-    guardarLocal(usuario.id, JSON.stringify(usuario));
+function registrar() {
+    const nuevoUsuario = new NewUser(inputUser.value, inputPassword.value, inputName.value, inputLastName.value, inputEmail.value)
+    users.push(nuevoUsuario)
+    console.log(nuevoUsuario)
+    console.log(users)
 }
 
-const crear = document.getElementById("CrearCuenta")
-crear.addEventListener ("click", respuestaClick2)
-function respuestaClick2(){
-const pregunta2 = prompt("¿Deseas crear un usuario?");
-    if (pregunta2 == "si"){
-        let usuario2 = prompt("Ingresa un nombre de usuario")
-        let nombre2 = prompt("Ingresa tu nombre")
-        let apellido2 = prompt("Ingresa tu apellido")
-        let mail2 = prompt ("Ingresa tu mail")
-        alert("¡Creaste tu usuario exitosamente!")
-    } else if (pregunta2 == "no"){
-       alert("Hasta luego, te esperamos pronto")
+registerUser.onclick = (e) => {
+    e.preventDefault()
+    const registerUser = document.getElementById("aceptar")
+    const formRegister = document.getElementById("formCrearUsuario")
+    const inputUser = document.getElementById("inputUser")
+    const inputPassword = document.getElementById("inputPassword")
+    const inputName = document.getElementById("inputName")
+    const inputLastName = document.getElementById("inputLastname")
+    const emailInput = document.getElementById("inputEmail");
+}
+    formRegister.onsubmit = (e) => {
+        e.preventDefault()
+        let mailExiste = users.some((userA) => userA.email === imputEmail.value)
+    
+        let usernameExiste = users.some((userA) => userA.username === inputUser.value)
+       
+        function nuevoUsuario() {
+            const newUser = new NewUser( inputUser.value, inputPassword.value, imputName.value, imputLastName.value, inputEmail.value,)
+            users.push(newUser)
+            console.log(users)
+            setStorage()
         }
 
-        usuarios.push({usuario, nombre, apellido, mail})
-        console.log(usuarios)}
+        (mailExiste || usernameExiste) ? alert("Usuario ya registrado"): nuevoUsuario()
+    }
+

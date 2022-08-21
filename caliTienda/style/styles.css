@@ -1,0 +1,420 @@
+.header {
+  background-image: linear-gradient(#e3e0d5, white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  grid-area: header;
+}
+.header .logo {
+  display: flex;
+  width: 90px;
+}
+.header ul {
+  display: flex;
+  list-style: none;
+}
+.header ul li {
+  padding: 8px;
+  margin-left: 20px;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+  border-radius: 7px;
+}
+.header ul li a {
+  color: #917255;
+  text-decoration: none;
+}
+.header ul li a:hover {
+  font-size: small;
+  transition: 1s;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.carrito #imagenCarrito {
+  width: 5%;
+}
+
+.about-sectionMayorista {
+  background: url(../img/arboles_bosque.jpg) no-repeat left;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-containerMayorista {
+  width: 55%;
+  float: right;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+  padding: 150px;
+}
+.inner-containerMayorista a {
+  text-decoration: none;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+  padding: 10px;
+  border-radius: 10px;
+  color: #917255;
+  width: 50%;
+}
+.inner-containerMayorista a:hover {
+  font-size: large;
+  transition: 1s;
+}
+
+.inner-containerMayorista h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 20px;
+  color: #917255;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.main {
+  grid-area: main;
+}
+
+.hero {
+  background-image: url(../img/Cali_Home.png);
+  width: 100%;
+  height: 90vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 70px;
+  color: #917255;
+  font-weight: normal;
+  text-align: center;
+}
+
+.calendario {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 60px;
+}
+.calendario .card-body {
+  background-color: rgba(145, 114, 85, 0.2666666667);
+}
+
+.main h2 {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+}
+
+.footer > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+  padding: 20px;
+  grid-area: footer;
+}
+.footer > div div div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.footer ul {
+  list-style: none;
+  font-size: 15px;
+}
+
+.footer p {
+  text-align: center;
+}
+
+.footer div div a img {
+  height: 50px;
+  padding: 2px;
+  transition: 1s;
+}
+.footer div div a img:hover {
+  transform: scale(1.1);
+}
+
+.footer div div h3 {
+  font-size: 15px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: end;
+  grid-area: navbar;
+}
+.navbar ul li a {
+  color: #917255;
+}
+.navbar ul li a:hover {
+  transition: 1s;
+  font-size: large;
+}
+
+.navbar ul li:hover {
+  transform: scale(1.1);
+}
+
+.carrito {
+  display: flex;
+}
+.carrito .carrito-text {
+  padding-left: 10px;
+}
+.carrito .carrito-text #imagenCarrito {
+  width: 7%;
+}
+
+#boton-vaciar {
+  margin-left: 10px;
+}
+
+/*-------------------Maps----------------------*/
+.contenedor--Nosotros {
+  font-size: 30px;
+}
+
+/*-------------------Mixin---------------------*/
+.productos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedorContacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+}
+
+/*-----------------Extend-------------------------*/
+.nos, .contenedor--Nosotros {
+  margin: 20px;
+  border-radius: 20px;
+  padding: 70px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #917255;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.5fr auto 0.5fr;
+  grid-template-areas: "header header" "navbar navbar" "main main" "footer footer";
+}
+
+/*-------------------------------Body----------------------------------------*/
+body {
+  font-family: "LibreBaskerville-Regular";
+  color: #ccccc3;
+}
+
+/*------------------------------Productos-----------------------------------*/
+.productos {
+  flex-wrap: wrap;
+  margin: 20px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.productos .card {
+  background-color: rgba(145, 114, 85, 0.2666666667);
+}
+
+main section div p {
+  margin: 1px;
+}
+
+main section div img {
+  width: 250px;
+  height: 400px;
+}
+
+/*-----------------------------Nosotros---------------------------------------*/
+.contenedor--Nosotros {
+  display: flex;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+  margin-bottom: 250px;
+}
+
+.about-section {
+  background: url(../img/flora.jpg) no-repeat left;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-container {
+  width: 55%;
+  float: right;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+  padding: 150px;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 20px;
+  color: #917255;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/*-----------------------------Contacto---------------------------------------*/
+.contenedorContacto {
+  font-size: 20px;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: rgba(145, 114, 85, 0.2666666667);
+  margin-bottom: 60px;
+}
+
+/*-------------------------------MediaQuerys-----------------------------------*/
+@media screen and (max-width: 615px) {
+  .productos {
+    justify-content: center;
+  }
+  .productos .card {
+    margin: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main .hero {
+    height: 30vh;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header li {
+    margin: 10px;
+  }
+  .footer > div {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero .inner-container {
+    padding: 80px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+    grid-area: navbar;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-section {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-container {
+    width: 100%;
+  }
+  .about-sectionMayorista {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-containerMayorista {
+    width: 100%;
+  }
+  .calendario {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about-sectionMayorista {
+    padding: 0;
+  }
+  .about-section {
+    padding: 0;
+  }
+  .main h2 {
+    font-size: 20px;
+  }
+  .main .hero {
+    height: 30vh;
+  }
+  .main .hero h1 {
+    font-size: 30px;
+  }
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer > div {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .productos {
+    justify-content: center;
+  }
+  .productos .card {
+    margin: 30px;
+  }
+}
+/*-----------------------------------------------------------------Login-------------------------------------------------------------------------------*/
+.section-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}/*# sourceMappingURL=styles.css.map */

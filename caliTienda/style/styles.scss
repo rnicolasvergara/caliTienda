@@ -210,7 +210,14 @@ main section div img{
    }
 }
 
-/*-------------------------------------------form-iniciarSesion------------------------------------*/
-.botones-crearUsuario{
-    margin-top: 20px;
+/*-----------------------------------------------------------------Login-------------------------------------------------------------------------------*/
+.section-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

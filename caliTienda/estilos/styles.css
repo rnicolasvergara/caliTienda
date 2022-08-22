@@ -559,8 +559,222 @@ main section div img {
   }
 }
 
-/*-------------------------------------------form-iniciarSesion------------------------------------*/
-.botones-crearUsuario {
-  margin-top: 20px;
+/*-----------------------------------------------------------------Login-------------------------------------------------------------------------------*/
+.section-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Titulo-Iniciar {
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login {
+  background-color: #91725544;
+  border-radius: 15px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 2em;
+  width: 50%;
+}
+
+#formlogin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2em;
+  text-align: center;
+}
+
+#user {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#password {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#divRegister {
+  display: none;
+}
+
+#formRegister {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px;
+  width: 100%;
+}
+
+#inputEmail {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#inputUser {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#inputPassword {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#imputRegister {
+  border-style: none;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-left: 215px;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+#newPassw {
+  display: none;
+}
+
+.btn-login {
+  border-style: none;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 5px;
+  text-align: center;
+}
+
+.btn-register {
+  border-style: none;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 5px;
+  text-align: center;
+}
+
+#recuperarContrasenia {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-left: 222px;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+#newPassw {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#emailRecuperar {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin: 30px;
+  text-align: center;
+}
+
+#passRecuperar {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin: 30px;
+  text-align: center;
+}
+
+#passConfirm {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  margin: 30px;
+  text-align: center;
+}
+
+#cambiarPass {
+  border-style: none;
+  border-radius: 10px;
+  font-size: 25px;
+  padding: 5px;
+  margin-left: 222px;
+  text-align: center;
+  width: 50%;
+}
+
+/*-----------------------------------------------------Clima------------------------------------------------------------*/
+#contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px;
+  text-align: center;
+}
+
+#box1 {
+  background-color: rgba(0, 0, 0, 0.767);
+  color: azure;
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+}
+
+#box2 {
+  background-color: rgba(0, 0, 0, 0.767);
+  color: azure;
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+}
+
+#box3 {
+  background-color: rgba(0, 0, 0, 0.767);
+  color: azure;
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
 }
 /*# sourceMappingURL=styles.css.map */

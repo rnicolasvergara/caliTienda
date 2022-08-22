@@ -755,6 +755,7 @@ main section div img {
 }
 
 #box1 {
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.767);
   color: azure;
   width: 200px;
@@ -763,6 +764,7 @@ main section div img {
 }
 
 #box2 {
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.767);
   color: azure;
   width: 200px;
@@ -771,6 +773,7 @@ main section div img {
 }
 
 #box3 {
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.767);
   color: azure;
   width: 200px;

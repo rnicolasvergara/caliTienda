@@ -123,17 +123,27 @@ function actualizarUIUsuario() {
     const iniciarsesionBtn = document.getElementById("IniciarSesion")
     
     if (usuarioActual && crearcuentaBtn && iniciarsesionBtn) {
-        crearcuentaBtn.textContent = '👤 ' + usuarioActual.username.toUpperCase()
-        crearcuentaBtn.href = "#"
-        crearcuentaBtn.style.backgroundColor = "#917255"
-        crearcuentaBtn.style.color = "white"
+        // Ocultar botones de login
+        crearcuentaBtn.style.display = "none"
         
-        iniciarsesionBtn.textContent = "🚪 Cerrar Sesión"
+        // Mostrar nombre de usuario y logout
+        iniciarsesionBtn.textContent = "👤 " + usuarioActual.username.toUpperCase() + " | 🚪 Logout"
         iniciarsesionBtn.href = "#"
+        iniciarsesionBtn.style.backgroundColor = "#917255"
+        iniciarsesionBtn.style.color = "white"
+        iniciarsesionBtn.style.padding = "10px 15px"
         iniciarsesionBtn.onclick = (e) => {
             e.preventDefault()
             cerrarSesion()
         }
+    } else if (crearcuentaBtn && iniciarsesionBtn) {
+        // Mostrar botones normales si no está logueado
+        crearcuentaBtn.style.display = "inline-block"
+        iniciarsesionBtn.textContent = "Iniciar Sesión"
+        iniciarsesionBtn.href = "./secciones/login.html"
+        iniciarsesionBtn.style.backgroundColor = ""
+        iniciarsesionBtn.style.color = ""
+        iniciarsesionBtn.onclick = null
     }
 }
 

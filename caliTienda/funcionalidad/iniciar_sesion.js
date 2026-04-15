@@ -11,6 +11,8 @@ let users = JSON.parse(localStorage.getItem("users")) || [{
     email: "demo@calitienda.com"
 }]
 
+let usuarioActual = JSON.parse(localStorage.getItem("usuarioActual")) || null
+
 function logIn() {
     let usuarioIngresado = users.find(userU => userU.username === user.value)
 
@@ -19,7 +21,10 @@ function logIn() {
     } else if (usuarioIngresado.password !== password.value) {
         Swal.fire('Contraseña incorrecta', '', 'error')
     } else {
-        Swal.fire('Bienvenido', `¡Hola ${usuarioIngresado.username}!`, 'success')
+        usuarioActual = usuarioIngresado
+        localStorage.setItem("usuarioActual", JSON.stringify(usuarioActual))
+        Swal.fire('Bienvenido', '¡Hola ' + usuarioIngresado.username + '!', 'success')
+        actualizarUIUsuario()
         setTimeout(() => window.location.href = "../index.html", 1500)
     }
 }
@@ -102,6 +107,36 @@ recuperarContrasenia.onclick = (e) => {
     }
 }
 
-function setStorage() {
+function setStorage(){
     localStorage.setItem("users", JSON.stringify(users))
 }
+
+function cerrarSesion() {
+    usuarioActual = null
+    localStorage.removeItem("usuarioActual")
+    Swal.fire('Sesión cerrada', 'Hasta pronto', 'info')
+    setTimeout(() => window.location.href = "../index.html", 1000)
+}
+
+function actualizarUIUsuario() {
+    const crearcuentaBtn = document.getElementById("CrearCuenta")
+    const iniciarsesionBtn = document.getElementById("IniciarSesion")
+    
+    if (usuarioActual && crearcuentaBtn && iniciarsesionBtn) {
+        crearcuentaBtn.textContent = '👤 ' + usuarioActual.username.toUpperCase()
+        crearcuentaBtn.href = "#"
+        crearcuentaBtn.style.backgroundColor = "#917255"
+        crearcuentaBtn.style.color = "white"
+        
+        iniciarsesionBtn.textContent = "🚪 Cerrar Sesión"
+        iniciarsesionBtn.href = "#"
+        iniciarsesionBtn.onclick = (e) => {
+            e.preventDefault()
+            cerrarSesion()
+        }
+    }
+}
+
+window.addEventListener('load', () => {
+    actualizarUIUsuario()
+})

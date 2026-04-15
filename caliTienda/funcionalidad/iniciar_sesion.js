@@ -23,6 +23,7 @@ function logIn() {
     } else {
         usuarioActual = usuarioIngresado
         localStorage.setItem("usuarioActual", JSON.stringify(usuarioActual))
+        localStorage.setItem("usuarioActualUsername", usuarioIngresado.username)
         Swal.fire('Bienvenido', '¡Hola ' + usuarioIngresado.username + '!', 'success')
         actualizarUIUsuario()
         setTimeout(() => window.location.href = "../index.html", 1500)
@@ -114,39 +115,75 @@ function setStorage(){
 function cerrarSesion() {
     usuarioActual = null
     localStorage.removeItem("usuarioActual")
+    localStorage.removeItem("usuarioActualUsername")
     Swal.fire('Sesión cerrada', 'Hasta pronto', 'info')
     setTimeout(() => window.location.href = "../index.html", 1000)
 }
 
+// NUEVA FUNCIÓN: Actualizar UI de usuario con manejo robusto
 function actualizarUIUsuario() {
-    const crearcuentaBtn = document.getElementById("CrearCuenta")
-    const iniciarsesionBtn = document.getElementById("IniciarSesion")
+    console.log("🔍 Actualizando UI Usuario. usuarioActual:", usuarioActual)
     
-    if (usuarioActual && crearcuentaBtn && iniciarsesionBtn) {
-        // Ocultar botones de login
-        crearcuentaBtn.style.display = "none"
+    // Elemento del menú de autenticación
+    const authMenu = document.getElementById("auth-menu")
+    const crearCuentaBtn = document.getElementById("CrearCuenta")
+    const iniciarSesionBtn = document.getElementById("IniciarSesion")
+    const usuarioLogueadoLi = document.getElementById("usuario-logueado")
+    const nombreUsuarioSpan = document.getElementById("nombre-usuario")
+    const btnLogout = document.getElementById("btn-logout")
+    
+    if (!authMenu) {
+        console.warn("⚠️ auth-menu no encontrado en el DOM")
+        return
+    }
+    
+    if (usuarioActual) {
+        console.log("✅ Usuario logueado:", usuarioActual.username)
         
-        // Mostrar nombre de usuario y logout
-        iniciarsesionBtn.textContent = "👤 " + usuarioActual.username.toUpperCase() + " | 🚪 Logout"
-        iniciarsesionBtn.href = "#"
-        iniciarsesionBtn.style.backgroundColor = "#917255"
-        iniciarsesionBtn.style.color = "white"
-        iniciarsesionBtn.style.padding = "10px 15px"
-        iniciarsesionBtn.onclick = (e) => {
-            e.preventDefault()
-            cerrarSesion()
+        // Ocultar botones de login
+        if (crearCuentaBtn) crearCuentaBtn.style.display = "none"
+        if (iniciarSesionBtn) iniciarSesionBtn.style.display = "none"
+        
+        // Mostrar datos de usuario logueado
+        if (usuarioLogueadoLi) {
+            usuarioLogueadoLi.style.display = "flex"
+            usuarioLogueadoLi.style.alignItems = "center"
         }
-    } else if (crearcuentaBtn && iniciarsesionBtn) {
-        // Mostrar botones normales si no está logueado
-        crearcuentaBtn.style.display = "inline-block"
-        iniciarsesionBtn.textContent = "Iniciar Sesión"
-        iniciarsesionBtn.href = "./secciones/login.html"
-        iniciarsesionBtn.style.backgroundColor = ""
-        iniciarsesionBtn.style.color = ""
-        iniciarsesionBtn.onclick = null
+        
+        if (nombreUsuarioSpan) {
+            nombreUsuarioSpan.textContent = "👤 " + usuarioActual.username.toUpperCase()
+        }
+        
+        // Conexión del botón logout
+        if (btnLogout) {
+            btnLogout.onclick = (e) => {
+                e.preventDefault()
+                console.log("🚪 Logout clickeado")
+                cerrarSesion()
+            }
+        }
+    } else {
+        console.log("❌ Sin usuario logueado")
+        
+        // Mostrar botones de login
+        if (crearCuentaBtn) crearCuentaBtn.style.display = "inline-block"
+        if (iniciarSesionBtn) iniciarSesionBtn.style.display = "inline-block"
+        
+        // Ocultar datos de usuario
+        if (usuarioLogueadoLi) usuarioLogueadoLi.style.display = "none"
     }
 }
 
+// Ejecutar al cargar la página
 window.addEventListener('load', () => {
+    console.log("📄 Página cargada. Verificando sesión...")
+    usuarioActual = JSON.parse(localStorage.getItem("usuarioActual")) || null
+    actualizarUIUsuario()
+})
+
+// También ejecutar cuando vuelve a index.html
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("📄 DOM Contenido cargado. Verificando sesión...")
+    usuarioActual = JSON.parse(localStorage.getItem("usuarioActual")) || null
     actualizarUIUsuario()
 })

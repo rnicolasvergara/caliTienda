@@ -16,12 +16,16 @@
         <a href="index.html">
           <img class="logo" src="./img/logoCali3.png" alt="Logo CaliTienda" />
         </a>
-        <ul>
+        <ul id="auth-menu">
           <li>
-            <a id="CrearCuenta" href="./secciones/login.html">Crear Cuenta</a>
+            <a id="CrearCuenta" href="./secciones/login.html" class="auth-btn">Crear Cuenta</a>
           </li>
           <li>
-            <a id="IniciarSesion" href="./secciones/login.html">Iniciar Sesión</a>
+            <a id="IniciarSesion" href="./secciones/login.html" class="auth-btn">Iniciar Sesión</a>
+          </li>
+          <li id="usuario-logueado" style="display: none;">
+            <span id="nombre-usuario" style="color: #917255; font-weight: bold; margin-right: 10px;"></span>
+            <a href="#" id="btn-logout" class="auth-btn" style="background-color: #917255; color: white;">🚪 Cerrar Sesión</a>
           </li>
         </ul>
       </header>

@@ -84,13 +84,6 @@ function mostrarNotificacion(titulo, mensaje, tipo) {
 }
 
 function mostrarCarrito() {
-    if (!usuarioActual) {
-        Swal.fire('Debes estar logueado', 'Por favor inicia sesión para ver el carrito', 'warning').then(() => {
-            window.location.href = './secciones/login.html'
-        })
-        return
-    }
-
     if (carrito.length === 0) {
         Swal.fire('Carrito vacío', 'No hay productos en tu carrito', 'info')
         return
@@ -126,10 +119,51 @@ function mostrarCarrito() {
         }
     })
 }
+    
+    carrito.forEach((item, index) => {
+        const subtotalItem = (item.precio * item.cantidad).toFixed(0)
+        htmlCarrito += '<div style="padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;"><div style="flex: 1;"><h5 style="margin: 0; color: #917255;">' + item.nombre + '</h5><p style="margin: 5px 0; font-size: 14px;">$' + item.precio + ' x <input type="number" id="cantidad-' + index + '" value="' + item.cantidad + '" min="1" max="999" style="width: 40px; padding: 5px; border: 1px solid #ccc; border-radius: 4px; text-align: center;" onchange="{ actualizarCantidad(\'' + item.nombre + '\', parseInt(this.value)); mostrarCarrito(); }"> = $' + subtotalItem + '</p></div><div style="display: flex; gap: 10px; align-items: center;"><button onclick="{ eliminarDelCarrito(\'' + item.nombre + '\'); mostrarCarrito(); }" class="btn btn-sm btn-danger" style="padding: 5px 10px; font-size: 12px; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">✕ Quitar</button></div></div>'
+    })
+    
+    htmlCarrito += '</div>'
+    
+    const subtotal = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0)
+    const impuesto = subtotal * IMPUESTO
+    const total = subtotal + impuesto + ENVIO
+
+    const resumen = '<div style="margin-top: 20px; padding: 15px; background-color: #f8f8f8; border-radius: 8px;"><p style="margin: 10px 0; display: flex; justify-content: space-between;"><strong>Subtotal:</strong> <strong>$' + subtotal.toFixed(0) + '</strong></p><p style="margin: 10px 0; display: flex; justify-content: space-between;"><strong>IVA (21%):</strong> <strong>$' + impuesto.toFixed(0) + '</strong></p><p style="margin: 10px 0; display: flex; justify-content: space-between;"><strong>Envío:</strong> <strong>$' + ENVIO + '</strong></p><hr style="margin: 10px 0; border: 1px solid #917255;"><p style="margin: 10px 0; display: flex; justify-content: space-between; font-size: 18px;"><strong>Total:</strong> <strong style="color: #917255;">$' + total.toFixed(0) + '</strong></p></div>'
+
+    Swal.fire({
+        title: '🛒 Tu Carrito',
+        html: htmlCarrito + resumen,
+        width: 600,
+        showCancelButton: true,
+        confirmButtonText: '✓ Finalizar Compra',
+        cancelButtonText: 'Seguir Comprando',
+        confirmButtonColor: '#917255',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            procederAlCheckout()
+        }
+    })
+}
 
 function procederAlCheckout() {
     if (!usuarioActual) {
-        Swal.fire('Error', 'Debes estar logueado para finalizar', 'error')
+        Swal.fire({
+            title: 'Necesitas iniciar sesión',
+            text: 'Para completar la compra, debes iniciar sesión con una cuenta',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ir a Login',
+            cancelButtonText: 'Seguir Comprando',
+            confirmButtonColor: '#917255'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = './secciones/login.html'
+            }
+        })
         return
     }
 
